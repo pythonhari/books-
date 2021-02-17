@@ -1,0 +1,15 @@
+{%extends 'testapp/base.html'%}
+{%block content%}
+<div align='center'>
+  <h1>List Of All Companies</h1><hr>
+</div>
+{%for comp in company_list%}
+<ul>
+  <h3><li><a href="{{comp.id}}">{{comp.cname|title}}</a></li></h3>
+</ul>
+{%endfor%}
+<div align='center'>
+  <a class="btn btn-lg btn-primary" href="/create">Add a New Company</a>
+  <a class="btn btn-lg btn-primary" href="/createemp">Add a New Employee</a>
+</div>
+{%endblock%}

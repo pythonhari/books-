@@ -1,0 +1,20 @@
+{%extends 'testapp/base.html'%}
+{%block content%}
+<div align='center'>
+  <h1>{{company.cname|title}} Information</h1><hr>
+</div>
+<ul>
+  <h3><li>Company Name: {{company.cname|upper}}</li></h3>
+  <h3><li>Company Location: {{company.location|upper}}</li></h3>
+  <h3><li>Company CEO: {{company.ceo|upper}}</li></h3>
+</ul>
+<h2>Employees Information</h2><hr>
+{%for employee in company.employees.all%}
+<ul>
+  <h3><li>Employee Number: {{employee.eno|upper}}</li></h3>
+  <h3><li>Employee Nmae: {{employee.ename|upper}}</li></h3>
+  <h3><li>Employee Salary: {{employee.esal|upper}}</li></h3>
+  <h3><li>Employee Company: {{employee.company|upper}}</li></h3>
+</ul><hr>
+{%endfor%}
+{%endblock%}
